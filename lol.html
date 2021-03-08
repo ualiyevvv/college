@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title>уалиев 04.03</title>
+	<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<style>
+/*Продолжительность анимации в CSS*/
+.firstDiv {
+	width: 50px; 
+	height: 50px; 
+	background-color: yellow; 
+	margin-top: 20px; 
+}
+.firstDiv:nth-child(1) {
+	animation-duration: 2s; 
+}
+.firstDiv:nth-child(2) { 
+	animation-duration: 4s; 
+}
+.firstDiv:nth-child(3) { 
+	animation-duration: 900ms; 
+}
+.firstDiv:hover { 
+	animation-name: growElement; 
+}
+@keyframes growElement {
+	0% { 
+	width: 50px; 
+	background-color: yellow; 
+	}
+	50% { 
+	width: 100px; 
+	background-color: green; 
+	}
+	100% { 
+	width: 200px; 
+	background-color: red; 
+	}
+}
+
+/*Несколько анимаций у одного элемента*/
+.newdiv {
+	width: 50px; 
+	height: 50px; 
+	background-color: yellow; 
+	margin-top: 20px; 
+	animation-duration: 3s;
+}
+.newdiv:hover {
+	animation-name: growElementNew, skewElementNew;
+}
+@keyframes growElementNew {
+	0%, 100% {
+	width: 50px; 
+	background-color: yellow; 
+	}
+	50% { 
+	width: 300px; 
+	background-color: green; 
+	}
+}
+@keyframes skewElementNew {
+	5%, 100% {
+	transform: skew(0deg); 
+	}
+	50% { 
+	transform: skew(-50deg); 
+	}
+	95% { 
+	transform: skew(50deg);
+	}
+}
+
+/*Повторение анимации*/
+.testDiv {
+	width: 50px; 
+	height: 50px; 
+	border-radius: 100%; 
+	display: inline-block; 
+	color: white; 
+	padding: 15px; 
+	position: relative; 
+	text-align: center; 
+	line-height: 50px; 
+	animation-duration: 1.5s; 
+	animation-name: iliketomoveit; 
+}
+.test {
+	animation-iteration-count: 1; 
+}
+.test2 {
+	animation-iteration-count: 2; 
+}
+.test3 {
+	animation-iteration-count: 3.5; 
+}
+.test4 {
+	animation-iteration-count: infinite; 
+}
+@keyframes iliketomoveit {
+	0% {top: 0px;} 
+	25% {top: 200px; background: red;} 
+	75% {top: 100px;} 
+	100% {top: 0px; background: black;} 
+}
+
+/*Задержка анимации*/
+.SecTest {
+	width: 75px; 
+	height: 75px; 
+	border-radius: 100%; 
+	position: relative; 
+	animation-name: iliketomoveitSecTest; 
+	animation-duration: 5s; 
+	animation-iteration-count: infinite; 
+}
+.Stest {
+	animation-delay: -500ms; 
+}
+.Stest2 {
+	animation-delay: 1500ms; 
+}
+.Stest3 {
+	animation-delay: 2s; 
+}
+@keyframes iliketomoveitSecTest {
+	0% {left: 0px;} 
+	25% {left: 400px; background: red;} 
+	75% {left: 200px;} 
+	100% {left: 0px; background: black;} 
+}
+
+/*Скорость анимации в CSS*/
+.ThirdTest {
+	width: 45px;
+	height: 45px; 
+	color: white; 
+	background: green; 
+	margin-bottom: 5px; 
+	position: relative; 
+	animation-name: iliketomoveitThirdTest; 
+	animation-duration: 5s; 
+	animation-iteration-count: infinite; 
+	*/
+}
+.Ttest {
+	animation-timing-function: ease; 
+}
+.Ttest2 {
+	animation-timing-function: linear; 
+}
+.Ttest3 {
+	animation-timing-function: ease-in; 
+}
+.Ttest4 {
+	animation-timing-function: ease-out; 
+}
+.Ttest5 {
+	animation-timing-function: ease-in-out; 
+}
+.Ttest6 {
+	animation-timing-function: cubic-bezier(.94,.06,.83,.67); 
+}
+@keyframes iliketomoveitThirdTest {
+	0% {left: 0px ;}
+	25% {left: 400px ;} 
+	75% {left: 200px ;} 
+	100% {left: 0px ;}
+}
+
+/*Пример пошаговой анимация в CSS*/
+.FourthTest {
+	width: 70px; 
+	height: 70px; 
+	color: white; 
+	background: green;
+	margin-bottom: 5px; 
+	position: relative; 
+	animation-name: iliketomoveitFourthTest; 
+	animation-duration: 5s; 
+	animation-iteration-count: infinite; 
+}
+.Ftest {
+	animation-timing-function: steps(3, end); 
+}
+.Ftest2 {
+	animation-timing-function: steps(3, start); 
+}
+.Ftest3 {
+	animation-timing-function: step-start; 
+}
+.Ftest4 {
+	animation-timing-function: step-end; 
+}
+@keyframes iliketomoveitFourthTest {
+	0% {left: 0px;} 
+	25% {left: 400px;} 
+	75% {left: 200px;} 
+	100% {left: 0px;} 
+}
+
+/*Направление анимации*/
+.Fivetest {
+	width: 100px; 
+	height: 100px; 
+	color: white; 
+	background: green; 
+	position: relative; 
+	animation-name: iliketomoveiFivetest; 
+	animation-duration: 5s; 
+	animation-iteration-count: infinite; 
+	animation-play-state: running; 
+}
+.Fivetest:hover {
+	animation-play-state: paused; 
+}
+@keyframes iliketomoveiFivetest {
+	0% {left: 0px;} 
+	25% {left: 400px;} 
+	75% {left: 200px;} 
+	100% {left: 0px;} 
+}
+
+/*Приостановка и запуск анимации*/
+.SixTest {
+	width: 75px; 
+	height: 75px; 
+	border-radius: 60px; 
+	display: inline-block;
+	color: white; 
+	padding: 15px; 
+	position: relative; 
+	animation-duration: 1.5s; 
+	animation-name: iliketomoveitSixTest; 
+	animation-iteration-count: infinite; 
+}
+.Sixtest {
+	animation-direction: normal; 
+}
+.Sixtest2 {
+	animation-direction: reverse; 
+}
+.Sixtest3 {
+	animation-direction: alternate; 
+}
+.Sixtest4 {
+	animation-direction: alternate-reverse; 
+}
+@keyframes iliketomoveitSixTest {
+	0% {top: 0px;} 
+	25% {top: 180px; background: red;} 
+	75% {top: 90px;} 
+	100% {top: 0px; background: black;} 
+}
+
+/*Использование свойства animation-fill-mode*/
+.SevenTest {
+	width: 100px; 
+	height: 100px; 
+	color: white; 
+	background: green; 
+	display: inline-block;
+	position: relative; 
+	animation-name: iliketomoveitSevenTest; 
+	animation-duration: 5s;
+	animation-animation-delay: 2s; 
+}
+.Seventest {
+	animation-fill-mode: none; 
+}
+.Seventest2 {
+	animation-fill-mode: forwards; 
+}
+.Seventest3 {
+	animation-fill-mode: backwards; 
+}
+.Seventest4 {
+	animation-fill-mode: both;
+}
+@keyframes iliketomoveitSevenTest {
+	0% {background: yellow;} 
+	100% {background: red;}
+}
+
+/*Использование универсального свойства animation*/
+.EightTest {
+	width: 100px; 
+	height: 100px; 
+	position: relative; 
+	animation: iliketomoveitEightTest 4s steps(3,start) 500ms infinite reverse;
+}
+@keyframes iliketomoveitEightTest {
+	0% {left: 0px;} 
+	50% {left: 500px; border-radius: 50px; background: plum;} 
+	100% {left: 0px; background: green;} 
+}
+
+/*Анимация загрузки на CSS*/
+body {
+	margin: 0; 
+	padding: 0; 
+}
+.container {
+	width: 100px; 
+	padding-top: 100px; 
+	margin: 0 auto; 
+}
+.item {
+	display: inline-block; 
+	width: 10px; 
+	height: 10px; 
+	margin: 0 auto; 
+	border-radius: 50px; 
+}
+.item:nth-child(1) {
+	background: orange; 
+	animation: up 1s linear 1s infinite; 
+}
+.item:nth-child(2) {
+	background: violet; 
+	animation: up 1s linear 1.2s infinite; 
+}
+.item:nth-child(3) {
+	background: magenta; 
+	animation: up 1s linear 1.4s infinite; 
+}
+.item:nth-child(4) {
+	background: lightseagreen;
+	animation: up 1s linear 1.6s infinite;
+}
+.item:nth-child(5) {
+	background: forestgreen; 
+	animation: up 1s linear 1.8s infinite; 
+}
+@keyframes up {
+ 0%, 100% {  transform: translateY(-15px); }
+ 50% {  transform: translate(5px, 0);  }
+}
+
+/*Анимация с использованием библиотеки Animate.CSS*/
+img {
+	animation-iteration-count: infinite;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+    animation-fill-mode: both;
+}
+</style>
+</head>
+<body>
+<h1>Продолжительность анимации в CSS</h1>
+	<div class="firstDiv">2s</div>
+	<div class="firstDiv">4s</div>
+	<div class="firstDiv">900ms</div>
+
+<h1>Несколько анимаций у одного элемента</h1>
+	<div class="newdiv"></div>
+	<div class="newdiv"></div>
+	<div class="newdiv"></div>
+
+<h1>Повторение анимации</h1>
+	<a href = "javascript:window.location.reload()">Обновите перед
+	просмотром</a></br>
+	<div class = "testDiv test">1</div>
+	<div class = "testDiv test2">2</div>
+	<div class = "testDiv test3">3.5</div>
+	<div class = "testDiv test4">infinite</div>
+
+<h1>Задержка анимации</h1>
+	<a href = "javascript:window.location.reload()">Обновите перед
+	просмотром</a></br>
+	<div class = "SecTest Stest">-500ms</div>
+	<div class = "SecTest Stest2">1500ms</div>
+	<div class = "SecTest Stest3">2s</div>
+
+<h1>Скорость анимации в CSS</h1>
+	<div class = "ThirdTest Ttest">ease</div>
+	<div class = "ThirdTest Ttest2">linear</div>
+	<div class = "ThirdTest Ttest3">ease-in</div>
+	<div class = "ThirdTest Ttest4">ease-out</div>
+	<div class = "ThirdTest Ttest5">ease-in-out</div>
+	<div class = "ThirdTest Ttest6">cubic-bezier</div>
+
+<h1>Пример пошаговой анимация в CSS</h1>
+	<div class = "FourthTest Ftest">steps(3, end)</div>
+	<div class = "FourthTest Ftest2">steps(3, start)</div>
+	<div class = "FourthTest Ftest3">step-start</div>
+	<div class = "FourthTest Ftest4">step-end</div>
+
+<h1>Приостановка и запуск анимации</h1>
+	<div class = "Fivetest">наведи на меня</div>
+
+<h1>Направление анимации</h1>
+	<div class = "SixTest Sixtest">normal</div>
+	<div class = "SixTest Sixtest2">reverse</div>
+	<div class = "SixTest Sixtest3">alternate</div>
+	<div class = "SixTest Sixtest4">alternate-reverse</div>
+	<br><br><br><br><br><br><br><br><br><br><br>
+
+<h1>Использование свойства animation-fill-mode</h1>
+	<div class = "SevenTest Seventest">none</div>
+	<div class = "SevenTest Seventest2">forwards</div>
+	<div class = "SevenTest Seventest3">backwards</div>
+	<div class = "SevenTest Seventest4">both</div>
+
+<h1>Использование универсального свойства animation</h1>
+	<div class = "EightTest"></div>
+
+<h1>Анимация загрузки на CSS</h1>
+	<div class = "container">
+		<div class = "item"></div>
+		<div class = "item"></div>
+		<div class = "item"></div>
+		<div class = "item"></div>
+		<div class = "item"></div>
+	</div>
+
+<h1>Анимация с использованием библиотеки Animate.CSS</h1>
+	<img src = "https://basicweb.ru//images/fair.png" alt = "mishka" width = "200px" height ="200px" class = "animated infinite fadeIn">
+
+
+</body>
+</html>
